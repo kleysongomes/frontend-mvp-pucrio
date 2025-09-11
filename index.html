@@ -39,7 +39,7 @@
                 <div class="input-group">
                     <input type="text" id="search-input" class="form-control" placeholder="Buscar no título ou conteúdo...">
                     <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-                    <button class="btn btn-outline-info" type="button" id="clear-search-btn">Limpar</button>
+                    <button class="btn btn-outline-secondary" type="button" id="clear-search-btn">Limpar</button>
                 </div>
             </form>
         </section>
@@ -48,6 +48,12 @@
             <h2 class="mb-3">Reviews Postados</h2>
             <div id="reviews-list" class="d-grid gap-3">
                 </div>
+
+            <nav id="pagination-controls" class="d-flex justify-content-center align-items-center mt-4">
+                <button id="prev-btn" class="btn btn-secondary me-2" disabled>&laquo; Anterior</button>
+                <span id="page-info" class="text-muted">Página 1 de 1</span>
+                <button id="next-btn" class="btn btn-secondary ms-2" disabled>Próxima &raquo;</button>
+            </nav>
         </section>
     </main>
 

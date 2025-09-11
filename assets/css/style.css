@@ -1,35 +1,92 @@
-
+/* --- Estilos Gerais --- */
 body {
     background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
 }
 
-/* Customizando o cabeçalho para ter uma cor diferente */
+.container {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
 header.bg-dark {
     background-color: #3a506b !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Adicionando uma sombra sutil à seção do formulário para destacá-la */
 #form-section {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
 }
 
-/* Estilo para os cards de review que vamos criar com o JavaScript */
+/* --- Estilos dos Cards (Acordeão) --- */
 .review-card {
     background-color: #ffffff;
-    border: 1px solid #e9ecef;
-    border-left: 5px solid #3a506b;
-    padding: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease-in-out;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1rem;
+    overflow: hidden;
 }
 
-.review-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+.card-header {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.3s ease;
 }
 
-/* Estilizando os botões de ação dentro dos cards */
-.review-card .btn-group .btn {
-    margin-right: 5px;
+.card-header:hover {
+    background-color: #f8f9fa;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Seta indicadora */
+.card-header::after {
+    content: '▶';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-header.expanded::after {
+    transform: rotate(90deg);
+}
+
+/* Conteúdo colapsável */
+.card-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.card-content.expanded {
+    padding: 1.5rem 1.5rem;
+    max-height: 500px;
+}
+
+.card-content p {
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+/* --- Outros Estilos --- */
+#reviews-list {
+    display: block;
+}
+
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+#pagination-controls {
+    gap: 1rem;
 }
