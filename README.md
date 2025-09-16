@@ -25,14 +25,14 @@ Este projeto foi construído para ser o mais simples possível de executar, sem 
 
 ### Pré-requisitos
 
-1.  **Back-end em Execução**: O projeto de [back-end](https://github.com/SEU_USUARIO/backend-mvp-pucrio) **deve estar rodando** para que o front-end possa buscar e enviar dados.
+1.  **Back-end em Execução**: O projeto de [back-end](https://github.com/kleysongomes/backend-mvp-pucrio.git) **deve estar rodando** para que o front-end possa buscar e enviar dados.
 2.  **Navegador Web**: Um navegador moderno como Google Chrome, Firefox, ou Edge.
 
 ### Passos
 
 1.  **Clone o Repositório**
     ```bash
-    git clone [https://github.com/SEU_USUARIO/frontend-mvp-pucrio.git](https://github.com/SEU_USUARIO/frontend-mvp-pucrio.git)
+    git clone https://github.com/kleysongomes/frontend-mvp-pucrio.git
     cd frontend-mvp-pucrio
     ```
 
