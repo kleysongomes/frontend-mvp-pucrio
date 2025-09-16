@@ -10,52 +10,55 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="app-container">
 
-    <header class="bg-dark text-white text-center p-3 mb-4">
-        <h1>Diário de Estudos Bíblicos</h1>
-    </header>
+        <aside class="form-column">
+            <header class="app-header">
+                <h1>Diário de Estudos</h1>
+                <p>Suas anotações em um só lugar</p>
+            </header>
 
-    <main class="container">
-        <section id="form-section" class="mb-4 p-4 border rounded bg-light">
-            <h2 id="form-title">Postar um Novo Review</h2>
-            <form id="review-form">
-                <input type="hidden" id="review-id">
+            <section id="form-section">
+                <h2 id="form-title">Nova Anotação</h2>
+                <form id="review-form">
+                    <input type="hidden" id="review-id">
+                    <div class="form-group">
+                        <label for="title">Título do Estudo</label>
+                        <input type="text" class="form-control" id="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Sua Anotação</label>
+                        <textarea class="form-control" id="content" rows="6" required></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="button" class="btn btn-secondary d-none" id="cancel-edit-btn">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </aside>
 
-                <div class="mb-3">
-                    <label for="title" class="form-label">Título do Estudo:</label>
-                    <input type="text" class="form-control" id="title" required>
-                </div>
-                <div class="mb-3">
-                    <label for="content" class="form-label">Seu Review:</label>
-                    <textarea class="form-control" id="content" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Salvar Review</button>
-                <button type="button" class="btn btn-secondary d-none" id="cancel-edit-btn">Cancelar Edição</button>
-            </form>
-        </section>
+        <main class="content-column">
+            <section id="search-section">
+                <form id="search-form" class="input-group">
+                    <input type="text" id="search-input" class="form-control" placeholder="Buscar em anotações...">
+                    <button class="btn btn-secondary" type="submit">Buscar</button>
+                    <button class="btn btn-secondary" type="button" id="clear-search-btn">Limpar</button>
+                </form>
+            </section>
 
-        <section id="search-section" class="mb-4">
-            <form id="search-form">
-                <div class="input-group">
-                    <input type="text" id="search-input" class="form-control" placeholder="Buscar no título ou conteúdo...">
-                    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-                    <button class="btn btn-outline-secondary" type="button" id="clear-search-btn">Limpar</button>
-                </div>
-            </form>
-        </section>
-
-        <section id="reviews-section">
-            <h2 class="mb-3">Reviews Postados</h2>
-            <div id="reviews-list" class="d-grid gap-3">
-                </div>
-
-            <nav id="pagination-controls" class="d-flex justify-content-center align-items-center mt-4">
-                <button id="prev-btn" class="btn btn-secondary me-2" disabled>&laquo; Anterior</button>
-                <span id="page-info" class="text-muted">Página 1 de 1</span>
-                <button id="next-btn" class="btn btn-secondary ms-2" disabled>Próxima &raquo;</button>
-            </nav>
-        </section>
-    </main>
+            <section id="reviews-section">
+                <div id="reviews-list">
+                    </div>
+                <nav id="pagination-controls" class="pagination-nav">
+                    <button id="prev-btn" class="btn btn-secondary" disabled>&laquo; Anterior</button>
+                    <span id="page-info"></span>
+                    <button id="next-btn" class="btn btn-secondary" disabled>Próxima &raquo;</button>
+                </nav>
+            </section>
+        </main>
+        
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
