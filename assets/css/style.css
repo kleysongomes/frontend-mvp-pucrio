@@ -20,69 +20,44 @@ header.bg-dark {
     transition: all 0.3s ease-in-out;
 }
 
-/* --- Estilos dos Cards (Acordeão) --- */
+/* --- Estilos dos Cards --- */
 .review-card {
     background-color: #ffffff;
     border: 1px solid #dee2e6;
+    border-left: 5px solid #3a506b;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-    margin-bottom: 1rem;
-    overflow: hidden;
-}
-
-.card-header {
-    padding: 1rem 1.5rem;
-    cursor: pointer;
+    transition: all 0.3s ease-in-out;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #dee2e6;
-    transition: background-color 0.3s ease;
+    flex-direction: column;
 }
 
-.card-header:hover {
-    background-color: #f8f9fa;
+.review-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
 
-.card-header h5 {
-    margin: 0;
+.review-card h5 {
     font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-/* Seta indicadora */
-.card-header::after {
-    content: '▶';
-    font-size: 0.8rem;
-    transition: transform 0.3s ease-in-out;
-}
-
-.card-header.expanded::after {
-    transform: rotate(90deg);
-}
-
-/* Conteúdo colapsável */
-.card-content {
-    padding: 0 1.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-}
-
-.card-content.expanded {
-    padding: 1.5rem 1.5rem;
-    max-height: 500px;
-}
-
-.card-content p {
+.review-card p {
+    flex-grow: 1; 
+    color: #495057;
     line-height: 1.6;
     word-break: break-word;
 }
 
-/* --- Outros Estilos --- */
+/* --- Layout da Grade de Reviews --- */
 #reviews-list {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
 }
 
+/* --- Outros Estilos --- */
 .btn {
     transition: all 0.2s ease-in-out;
 }
