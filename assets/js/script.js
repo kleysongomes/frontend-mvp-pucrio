@@ -69,33 +69,19 @@ function createReviewCard(review) {
     card.setAttribute('data-id', review.id);
     
     const formattedDate = new Date(review.date_posted).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
-    
+
     card.innerHTML = `
-        <div class="card-header">
+        <div class="d-flex justify-content-between">
             <h5>${review.title}</h5>
+            <small class="text-muted">ID: ${review.id}</small>
         </div>
-        <div class="card-content">
-            <p>${review.content}</p>
-            <small class="text-muted">ID: ${review.id} | Postado em: ${formattedDate}</small>
-            <div class="mt-3">
-                <button class="btn btn-sm btn-outline-secondary edit-btn">Editar</button>
-                <button class="btn btn-sm btn-outline-danger delete-btn">Deletar</button>
-            </div>
+        <p>${review.content}</p>
+        <small class="text-muted">Postado em: ${formattedDate}</small>
+        <div class="mt-3">
+            <button class="btn btn-sm btn-outline-secondary edit-btn">Editar</button>
+            <button class="btn btn-sm btn-outline-danger delete-btn">Deletar</button>
         </div>
     `;
-
-    const header = card.querySelector('.card-header');
-    const content = card.querySelector('.card-content');
-    header.addEventListener('click', () => {
-        header.classList.toggle('expanded');
-        content.classList.toggle('expanded');
-    });
-    
-    card.querySelectorAll('.btn').forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
-    });
 
     card.querySelector('.edit-btn').addEventListener('click', () => populateFormForEdit(review));
     card.querySelector('.delete-btn').addEventListener('click', () => deleteReview(review.id));
