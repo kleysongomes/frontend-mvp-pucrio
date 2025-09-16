@@ -10,7 +10,6 @@ Este projeto é a interface de usuário (front-end) para a API de Diário de Est
 
 * **Criar** novos reviews através de um formulário.
 * **Visualizar** todos os reviews postados em formato de lista.
-* **Cards Interativos (Acordeão)** que se expandem ao clicar para mostrar o conteúdo detalhado.
 * **Paginação** para navegar entre os reviews de forma otimizada.
 * **Atualizar** um review existente.
 * **Deletar** um review.
